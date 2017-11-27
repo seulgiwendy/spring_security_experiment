@@ -36,6 +36,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
         httpSecurity
                 .headers().frameOptions().disable();
+
+        httpSecurity
+                .logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/");
     }
 
     @Bean

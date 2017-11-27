@@ -18,8 +18,4 @@ public class SecurityApplication {
 	    return "fuck you!";
     }
 
-    @GetMapping("/admin")
-    public String admin() {
-	    return "this is admin page.";
-    }
 }
