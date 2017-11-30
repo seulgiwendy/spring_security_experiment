@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -19,12 +20,23 @@ public class Account {
     private String userId;
     private String password;
     private String name;
+    private String providerId;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "account")
     private List<Role> roles;
 
+    public Account() {
 
+    }
+
+    public Account(String userId, String password, String name) {
+        this.userId = userId;
+        this.password = password;
+        this.name = name;
+
+        this.roles = Arrays.asList(new Role("MANAGER"));
+    }
 
     public long getId() {
         return id;

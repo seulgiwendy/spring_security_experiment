@@ -13,6 +13,14 @@ public class Role {
 
     private String roleName;
 
+    public Role() {
+
+    }
+
+    public Role(String roleName) {
+        this.roleName = roleName;
+    }
+
     public Long getFno() {
         return fno;
     }
@@ -27,5 +35,10 @@ public class Role {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("role : %s" , this.roleName);
     }
 }
